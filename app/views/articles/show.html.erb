@@ -1,5 +1,9 @@
 <h1 class="title"> <%= @article.title %></h2>
-<%= Kramdown::Document.new(@article.content).to_html %>
+<p class="content"><%= @article.content.to_s %> </p>
 <p class="author"> <%= @article.author %></p>
 <%= link_to "Edit", edit_article_path %>
 <%= link_to "Articles", articles_path %>
+<a class="delete"><%= link_to "Delete", article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?"} %>
+</a>

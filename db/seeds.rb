@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-
-10.times do
+i = 0
+100.times do
   article = Article.new(
-    title:    "The history of the " + Faker::GameOfThrones.house + "house",
-    content:  Faker::Lorem.paragraph,
+    title:    "fact ##{i += 1}",
+    content:  Faker::ChuckNorris.fact,
     author: Faker::GameOfThrones.character
   )
   article.save!
